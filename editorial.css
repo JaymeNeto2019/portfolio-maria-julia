@@ -35,7 +35,7 @@ header { display: flex; justify-content: space-between; align-items: center; fle
 nav { display: flex; flex-wrap: wrap; gap: .45rem 1.25rem; font-size: .8rem; font-weight: 700; }
 nav a { text-decoration: none; }
 nav a:hover { color: var(--wine); text-decoration: underline; }
-main > section:not(.cover-story) { padding: clamp(3rem, 6vw, 7rem) var(--gutter); }
+main > section { padding: clamp(3rem, 6vw, 7rem) var(--gutter); }
 main > section > :where(h2 + p, .eyebrow + h2 + p) { max-width: 68ch; margin-top: .8rem; }
 .btn { display: inline-flex; align-items: center; gap: .7em; width: fit-content; padding: .65em 1.08em; border: 1px solid var(--wine); border-radius: 999px; background: var(--wine); color: white; font: 700 .86rem/1.3 var(--sans); text-decoration: none; transition: background .18s, color .18s, transform .18s; }
 .btn.alt { background: var(--paper); color: var(--wine); }
@@ -45,38 +45,9 @@ main > section > :where(h2 + p, .eyebrow + h2 + p) { max-width: 68ch; margin-top
 .eyebrow + h2 { margin-top: .55rem; }
 .small, time { color: var(--muted); }
 
-.cover-story { position: relative; isolation: isolate; padding: 1.3rem var(--gutter) clamp(3.4rem, 7vw, 6rem); }
-.cover-story::before { position: absolute; z-index: -1; inset: 42% 0 0; content: ""; background: var(--cream); }
-.cover-heading { max-width: 95rem; margin-inline: auto; }
-.cover-heading p { display: flex; align-items: center; gap: .85em; margin-bottom: .65rem; color: var(--wine); font-size: clamp(.65rem, 1.1vw, .86rem); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.cover-heading p span { background: var(--wine); width: 1.6rem; height: 1px; }
-.cover-heading h1 { font-size: min(15vw, 15.2rem); letter-spacing: -.083em; font-weight: 700; line-height: .86; white-space: nowrap; }
-.cover-collage { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr minmax(0, .77fr) .17fr; align-items: center; max-width: 77rem; margin: clamp(-1rem, -1vw, -.35rem) auto 0; }
-.cover-copy { z-index: 2; padding: clamp(2rem, 5vw, 5rem) 0 1rem; }
-.cover-name { font: 600 clamp(3.5rem, 8.7vw, 8rem)/.8 var(--serif); letter-spacing: -.075em; }
-.cover-name em { color: var(--wine); font-weight: 500; }
-.cover-beats { margin: 1.55rem 0 1.1rem; font-weight: 600; }
-.cover-portrait { position: relative; z-index: 1; max-width: 26rem; justify-self: start; padding: .55rem; background: white; transform: rotate(5deg); box-shadow: .6rem .75rem 0 #d82f722e; }
-.cover-portrait img { width: 100%; height: auto; max-height: 29rem; object-fit: contain; }
-.cover-portrait::before, .academic-photo::before { position: absolute; z-index: 2; top: -.5rem; left: 27%; width: 47%; height: 1.3rem; background: #ee884795; content: ""; transform: rotate(-11deg); }
-.cover-paper { position: absolute; top: 8%; right: 0; width: 38%; height: auto; max-height: 91%; object-fit: contain; transform: rotate(12deg); mix-blend-mode: multiply; opacity: .73; clip-path: polygon(16% 4%, 94% 0, 96% 84%, 10% 100%, 0 30%); }
-.cover-camera { z-index: 2; position: absolute; right: 1%; bottom: -4%; width: min(22%, 14rem); height: auto; transform: rotate(-13deg); mix-blend-mode: multiply; }
-.cover-location { position: absolute; bottom: 9%; right: 0; z-index: 3; padding: .12em .5em; color: var(--wine); background: var(--blush); font: 700 clamp(1rem, 2.2vw, 1.75rem)/1.2 var(--hand); transform: rotate(8deg); }
+.intro-primary::before, .academic-photo::before { position: absolute; z-index: 2; top: -.5rem; left: 27%; width: 47%; height: 1.3rem; background: #ee884795; content: ""; transform: rotate(-11deg); }
 
-.prazer { background: #f8dce5; color: var(--wine); position: relative; }
-.prazer::before, #projetos::before { position: absolute; inset: 0 0 auto; height: 12px; background: var(--cream); clip-path: polygon(0 0, 100% 0, 100% 34%, 95% 78%, 89% 45%, 79% 88%, 67% 41%, 56% 70%, 42% 38%, 32% 90%, 22% 45%, 14% 78%, 4% 35%, 0 65%); content: ""; }
-.prazer-board { position: relative; display: grid; grid-template-columns: 1fr minmax(0, .94fr) 1fr; align-items: center; gap: 1rem clamp(1.4rem, 7vw, 7rem); max-width: 72rem; margin: auto; }
-.prazer h2 { grid-column: 1/-1; font-size: clamp(5rem, 13vw, 12rem); line-height: .76; text-align: center; transform: rotate(-4deg); z-index: 2; }
-.prazer-note { font-size: clamp(.97rem, 1.65vw, 1.28rem); font-weight: 600; }
-.note-left { transform: rotate(-5deg); }
-.note-right { align-self: end; transform: rotate(3deg); }
-.prazer-photo { width: min(100%, 20rem); justify-self: center; padding: .4rem; background: var(--paper); transform: rotate(-4deg); box-shadow: .55rem .6rem 0 #8e163d2b; }
-.prazer-photo img { width: 100%; height: auto; }
-.arrow { position: absolute; font-size: clamp(2rem, 7.4vw, 6.5rem); line-height: 1; pointer-events: none; }
-.arrow-left { top: 22%; left: 20%; transform: rotate(-14deg); }
-.arrow-right { top: 29%; right: 18%; transform: rotate(-12deg); }
-.prazer-sign { grid-column: 1/-1; text-align: center; line-height: .95; font-size: clamp(2.45rem, 6.1vw, 5.5rem); transform: rotate(-3deg); margin-top: .5rem; color: var(--wine); }
-.prazer-sign strong { text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: .11em; }
+#projetos::before { position: absolute; inset: 0 0 auto; height: 12px; background: var(--cream); clip-path: polygon(0 0, 100% 0, 100% 34%, 95% 78%, 89% 45%, 79% 88%, 67% 41%, 56% 70%, 42% 38%, 32% 90%, 22% 45%, 14% 78%, 4% 35%, 0 65%); content: ""; }
 
 #reportagens { background: var(--paper); }
 .clippings-lead { display: grid; grid-template-columns: 1fr minmax(0, .36fr); gap: 1rem; align-items: center; position: relative; isolation: isolate; padding: clamp(1.5rem, 4vw, 4.6rem); background: #f6bb90; box-shadow: .5rem .5rem 0 #f5d7e2; }
@@ -199,20 +170,7 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
 @media (max-width: 620px) {
   header { gap: .65rem; }
   nav { gap: .35rem .8rem; font-size: .75rem; }
-  .cover-heading h1 { font-size: 16vw; }
-  .cover-collage { grid-template-columns: 1fr .87fr; }
-  .cover-copy { padding: 1.7rem 0 .25rem; }
-  .cover-name { font-size: clamp(2.4rem, 9.6vw, 3.55rem); }
-  .cover-beats { font-size: .8rem; margin: .65rem 0; }
-  .cover-copy .btn { font-size: .71rem; }
-  .cover-portrait { padding: .25rem; width: 91%; }
-  .cover-camera { width: 23%; right: 0; bottom: -8%; }
-  .cover-location { bottom: -13%; right: 16%; }
-  .prazer-board { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 1.25rem 1rem; }
-  .prazer-photo { grid-column: 2; grid-row: 2/4; align-self: center; }
-  .prazer-note { font-size: .9rem; transform: none; }
-  .note-right { grid-column: 1; }
-  .arrow { display: none; }
+
   .clippings-lead { grid-template-columns: 1fr; overflow: hidden; }
   .clippings-paper { width: 44%; position: absolute; right: -8%; top: 0; z-index: -1; opacity: .38; }
   .controls input { width: 100%; margin: 0; }
@@ -246,11 +204,8 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
 .archive-toggle[hidden] { display: none; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .cover-camera:hover { animation: camera-tilt .4s ease-out; }
+
   .thought:hover { animation: thought-pop .5s ease-out; }
-  @keyframes camera-tilt {
-    50% { transform: rotate(-7deg) translateY(-.25rem); }
-  }
   @keyframes thought-pop {
     50% { transform: rotate(-3deg) scale(1.07); }
   }
@@ -259,10 +214,7 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
 .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
 .chips span { padding: .22rem .55rem; background: var(--blush); color: var(--wine); font-size: .8rem; border-radius: 999px; }
 .cols > * { min-width: 0; }
-.arrow { width: clamp(2.4rem, 6vw, 5.5rem); height: clamp(1.4rem, 3vw, 3rem); font-size: 0; border: 2px solid currentColor; border-color: currentColor transparent transparent; border-radius: 50%; }
-.arrow::after { position: absolute; content: ""; width: .65rem; height: .65rem; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(18deg); }
-.arrow-left::after { right: .1rem; top: .15rem; }
-.arrow-right::after { left: .1rem; top: .15rem; transform: rotate(76deg); }
+
 .btn span[aria-hidden="true"] { font-family: "DejaVu Sans", sans-serif; }
 
 @media (max-width: 620px) {
@@ -298,15 +250,12 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
   pointer-events: none;
   filter: drop-shadow(2px 3px 1px #24151a35);
 }
-.cover-paper, .cover-camera, .clippings-paper, .vnl-mics, .academic-clapper, .design-star {
+.clippings-paper, .vnl-mics, .academic-clapper, .design-star {
   clip-path: none;
   mix-blend-mode: normal;
   opacity: 1;
 }
-.cover-paper { width: min(33%, 21rem); right: 2%; top: 7%; }
-.cover-camera { width: min(24%, 16rem); right: 0; }
-.cover-news { position: absolute; z-index: -1; right: 7%; bottom: 12%; width: min(30%, 19rem); transform: rotate(-13deg); }
-.prazer-sticker { position: absolute; z-index: 2; top: 10%; left: 66%; width: min(10%, 6.3rem); transform: rotate(17deg); }
+
 .clippings-lead { grid-template-columns: minmax(0, 1fr) minmax(0, .43fr); }
 .clippings-paper { width: min(86%, 16rem); justify-self: center; transform: rotate(9deg); z-index: 1; }
 .clippings-drawing { position: absolute; right: 3%; bottom: 8%; width: min(15%, 11rem); transform: rotate(13deg); }
@@ -323,10 +272,7 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
 #projetos .grid:has(> :only-child) { max-width: min(68%, 52rem); }
 
 @media (max-width: 620px) {
-  .cover-paper { width: 32%; right: 0; }
-  .cover-camera { width: 25%; right: 0; }
-  .cover-news { width: 27%; right: 4%; }
-  .prazer-sticker { top: 0; left: 81%; width: min(14%, 3.25rem); }
+
   .clippings-lead { grid-template-columns: minmax(0, 1fr); padding-right: 26%; }
   .clippings-paper { width: 25%; right: 2%; top: auto; bottom: 12%; }
   .clippings-drawing { width: 17%; right: 2%; bottom: auto; top: 14%; }
@@ -344,20 +290,9 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
 
 /* Keep the editorial layout compact on wide screens. */
 :root { --gutter: max(clamp(1.1rem, 4.5vw, 4rem), calc((100% - 78rem) / 2)); }
-main > section:not(.cover-story) { padding-block: clamp(2.25rem, 3.7vw, 4.25rem); }
+main > section { padding-block: clamp(2.25rem, 3.7vw, 4.25rem); }
 h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
-.cover-story { padding-block: 1.35rem clamp(2.3rem, 4.1vw, 3.9rem); }
-.cover-heading h1 { font-size: clamp(3rem, 12.1vw, 11rem); line-height: .94; letter-spacing: -.072em; }
-.cover-heading p { margin-bottom: .95rem; }
-.cover-collage { max-width: 68rem; margin-top: .15rem; }
-.cover-copy { padding-block: clamp(1.5rem, 3.2vw, 3.65rem) .7rem; }
-.cover-name { font-size: clamp(3rem, 7.5vw, 6.3rem); letter-spacing: -.059em; }
-.cover-portrait { max-width: 21rem; }
-.cover-portrait img { max-height: 23rem; }
-.prazer-board { max-width: 64rem; gap: .75rem clamp(1.1rem, 5vw, 4.75rem); }
-.prazer h2 { font-size: clamp(4.4rem, 10vw, 9rem); }
-.prazer-photo { width: min(100%, 16rem); }
-.prazer-sign { font-size: clamp(2.3rem, 5vw, 4.3rem); }
+
 .clippings-lead { grid-template-columns: minmax(0, 1fr) minmax(12rem, .55fr); padding: clamp(1.25rem, 3.4vw, 3.35rem); }
 .clippings-lead .hand, .vnl-lead .hand { font-size: clamp(1.6rem, 3.35vw, 2.85rem); }
 .clippings-art { position: relative; isolation: isolate; width: 100%; min-height: clamp(9rem, 19vw, 16rem); display: grid; align-items: center; }
@@ -376,11 +311,7 @@ h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
 .exchange-photo { display: block; position: relative; inset: auto; justify-self: center; width: min(100%, 17rem); padding: .4rem; transform: rotate(5deg); box-shadow: .45rem .45rem 0 #8e163d30; }
 
 @media (max-width: 620px) {
-  .cover-heading h1 { font-size: clamp(2.65rem, 14.4vw, 5.2rem); }
-  .cover-copy { padding-top: 1.4rem; }
-  .cover-name { font-size: clamp(2.3rem, 9.3vw, 3.5rem); }
-  .cover-portrait img { max-height: none; }
-  .prazer-photo { width: 100%; }
+
   .clippings-lead { grid-template-columns: minmax(0, 1fr) minmax(4.5rem, .45fr); gap: .65rem; padding: 1.05rem; }
   .clippings-lead h2 { font-size: clamp(1.75rem, 6.1vw, 3rem); }
   .clippings-lead .hand, .vnl-lead .hand { font-size: clamp(1.35rem, 5vw, 1.9rem); }
@@ -454,28 +385,10 @@ h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
 }
 
 @media (max-width: 700px) {
-  main > section:not(.cover-story) { padding-block: 2.55rem; }
+  main > section { padding-block: 2.55rem; }
   h2 { font-size: clamp(2.35rem, 8vw, 3.6rem); }
-  .cover-heading h1 { font-size: min(14.6vw, 5.25rem); }
-  .cover-collage { grid-template-columns: minmax(0, 1fr); gap: 1.35rem; }
-  .cover-copy { padding: 1.4rem 0 0; }
-  .cover-name { font-size: clamp(3rem, 11vw, 4.4rem); line-height: .91; }
-  .cover-beats { font-size: .94rem; margin-block: .85rem; }
-  .cover-copy .btn, .academic-lead .btn { font-size: .84rem; min-height: 2.75rem; }
-  .cover-portrait { justify-self: center; max-width: 15rem; width: 70%; height: auto; margin: .3rem 0 1.15rem; transform: rotate(3deg); }
-  .cover-portrait img { max-height: none; }
-  .cover-paper { top: auto; right: 0; bottom: 2.5rem; width: min(34%, 8rem); }
-  .cover-news { bottom: 1.35rem; right: 3%; width: min(25%, 6rem); }
-  .cover-camera { width: min(21%, 5rem); right: auto; left: 0; bottom: .5rem; }
-  .cover-location { right: 0; bottom: 0; font-size: 1.2rem; }
 
-  .prazer-board { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; align-items: start; }
-  .prazer h2 { line-height: .85; }
-  .prazer-photo { grid-area: auto; width: min(69%, 13.5rem); transform: rotate(-3deg); }
-  .prazer-note { max-width: 38ch; margin-inline: auto; font-size: 1rem; transform: none; }
-  .prazer-sign { font-size: clamp(2rem, 8vw, 3.35rem); line-height: 1; }
-  .prazer-sign br { display: none; }
-  .prazer-sticker { top: .45rem; left: auto; right: 6%; width: min(12%, 2.65rem); }
+  .academic-lead .btn { font-size: .84rem; min-height: 2.75rem; }
 
   .clippings-lead, .vnl-lead, .certificate-lead, .academic-lead { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
   .clippings-lead { padding: 1.25rem; }
@@ -525,4 +438,70 @@ h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
   .exchange-photo { width: min(61%, 13rem); }
   .contact-panel { row-gap: 1.1rem; }
   .contact-panel figure { width: min(57%, 11rem); justify-self: start; }
+}
+
+.intro-rosa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+  grid-template-areas: "heading portraits" "bio portraits";
+  align-items: center;
+  column-gap: clamp(2rem, 6vw, 6rem);
+  row-gap: 1.1rem;
+  background: #f8dce5;
+}
+.intro-heading { grid-area: heading; position: relative; align-self: end; }
+.intro-heading h1 {
+  font-size: clamp(3.25rem, 6vw, 6.3rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.intro-heading h1 em { color: var(--wine); font-weight: 500; }
+.intro-greeting {
+  width: fit-content;
+  margin: .65rem 0 .25rem;
+  color: var(--wine);
+  font-size: clamp(3.4rem, 7vw, 6.2rem);
+  line-height: .95;
+  transform: rotate(-5deg);
+}
+.intro-nickname { margin-top: .65rem; font-size: 1.12rem; }
+.intro-nickname strong { color: var(--wine); }
+.intro-sticker { position: absolute; top: 1rem; right: 8%; width: clamp(2rem, 6vw, 4.9rem); transform: rotate(12deg); }
+.intro-portraits {
+  grid-area: portraits;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+  width: 100%;
+  max-width: 33rem;
+  margin-inline: auto;
+  padding: 1.1rem .5rem;
+}
+.intro-primary, .intro-secondary {
+  position: relative;
+  padding: .35rem;
+  background: var(--paper);
+  box-shadow: .35rem .4rem 0 #8e163d29;
+}
+.intro-primary { transform: rotate(-4deg); }
+.intro-secondary { transform: rotate(5deg); margin-top: 2.6rem; }
+.intro-portraits img { width: 100%; height: auto; }
+.intro-paper { position: absolute; z-index: -1; top: 4%; right: 6%; width: 39%; transform: rotate(14deg); }
+.intro-camera { position: absolute; z-index: 2; right: 4%; bottom: 3%; width: min(18%, 5.2rem); transform: rotate(-12deg); }
+.intro-bio { grid-area: bio; align-self: start; max-width: 52ch; }
+.intro-beats { margin-bottom: .85rem; font-weight: 700; color: var(--wine); }
+.intro-bio .btn { min-height: 2.75rem; }
+
+@media (max-width: 700px) {
+  .intro-rosa { grid-template-columns: minmax(0, 1fr); grid-template-areas: "heading" "portraits" "bio"; row-gap: .95rem; }
+  .intro-heading h1 { font-size: clamp(2.35rem, 9.6vw, 4rem); text-wrap: initial; }
+  .intro-greeting { font-size: clamp(3.1rem, 13vw, 4.4rem); }
+  .intro-portraits { max-width: 24rem; padding-inline: .8rem; }
+  .intro-secondary { margin-top: 1.35rem; }
+  .intro-camera { right: 6%; bottom: 4%; }
+  .intro-sticker { right: 4%; }
 }
