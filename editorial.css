@@ -341,3 +341,58 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
   .design-news { right: 12%; top: auto; bottom: 6%; width: 18%; }
   #projetos .grid:has(> :only-child) { max-width: none; }
 }
+
+/* Keep the editorial layout compact on wide screens. */
+:root { --gutter: max(clamp(1.1rem, 4.5vw, 4rem), calc((100% - 78rem) / 2)); }
+main > section:not(.cover-story) { padding-block: clamp(2.25rem, 3.7vw, 4.25rem); }
+h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
+.cover-story { padding-block: 1.35rem clamp(2.3rem, 4.1vw, 3.9rem); }
+.cover-heading h1 { font-size: clamp(3rem, 12.1vw, 11rem); line-height: .94; letter-spacing: -.072em; }
+.cover-heading p { margin-bottom: .95rem; }
+.cover-collage { max-width: 68rem; margin-top: .15rem; }
+.cover-copy { padding-block: clamp(1.5rem, 3.2vw, 3.65rem) .7rem; }
+.cover-name { font-size: clamp(3rem, 7.5vw, 6.3rem); letter-spacing: -.059em; }
+.cover-portrait { max-width: 21rem; }
+.cover-portrait img { max-height: 23rem; }
+.prazer-board { max-width: 64rem; gap: .75rem clamp(1.1rem, 5vw, 4.75rem); }
+.prazer h2 { font-size: clamp(4.4rem, 10vw, 9rem); }
+.prazer-photo { width: min(100%, 16rem); }
+.prazer-sign { font-size: clamp(2.3rem, 5vw, 4.3rem); }
+.clippings-lead { grid-template-columns: minmax(0, 1fr) minmax(12rem, .55fr); padding: clamp(1.25rem, 3.4vw, 3.35rem); }
+.clippings-lead .hand, .vnl-lead .hand { font-size: clamp(1.6rem, 3.35vw, 2.85rem); }
+.clippings-art { position: relative; isolation: isolate; width: 100%; min-height: clamp(9rem, 19vw, 16rem); display: grid; align-items: center; }
+.clippings-torn-paper { width: min(100%, 22rem); transform: rotate(-9deg); }
+.clippings-paper { position: absolute; z-index: 1; right: 0; bottom: 0; width: min(43%, 9rem); }
+#reportagens > p:not(.archive-count) { margin-top: .9rem; }
+.vnl-lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(13rem, .62fr); gap: clamp(1rem, 3.5vw, 3.5rem); padding: .3rem 0 0; min-height: 0; }
+.vnl-lead h2 { font-size: clamp(3.55rem, 8vw, 7.2rem); }
+.vnl-copy { min-width: 0; padding-bottom: 1.4rem; }
+.vnl-lead .thought { display: inline-block; margin: 1rem 0 0 .2rem; font-size: clamp(1.5rem, 2.9vw, 2.5rem); }
+.vnl-art { position: relative; isolation: isolate; align-self: stretch; width: min(100%, 23rem); min-height: clamp(14rem, 24vw, 20rem); justify-self: end; }
+.vnl-mics { z-index: 1; width: min(70%, 15.2rem); right: 4%; bottom: .15rem; transform: rotate(11deg); }
+.vnl-megaphone { z-index: 2; width: min(33%, 7rem); right: 58%; bottom: .25rem; transform: rotate(-13deg); }
+.certificate-lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, .43fr); align-items: center; gap: clamp(1rem, 5vw, 4rem); padding-bottom: 1rem; }
+.certificate-lead p { margin-top: .8rem; max-width: 64ch; }
+.exchange-photo { display: block; position: relative; inset: auto; justify-self: center; width: min(100%, 17rem); padding: .4rem; transform: rotate(5deg); box-shadow: .45rem .45rem 0 #8e163d30; }
+
+@media (max-width: 620px) {
+  .cover-heading h1 { font-size: clamp(2.65rem, 14.4vw, 5.2rem); }
+  .cover-copy { padding-top: 1.4rem; }
+  .cover-name { font-size: clamp(2.3rem, 9.3vw, 3.5rem); }
+  .cover-portrait img { max-height: none; }
+  .prazer-photo { width: 100%; }
+  .clippings-lead { grid-template-columns: minmax(0, 1fr) minmax(4.5rem, .45fr); gap: .65rem; padding: 1.05rem; }
+  .clippings-lead h2 { font-size: clamp(1.75rem, 6.1vw, 3rem); }
+  .clippings-lead .hand, .vnl-lead .hand { font-size: clamp(1.35rem, 5vw, 1.9rem); }
+  .clippings-art { min-height: clamp(5.6rem, 25vw, 8.5rem); }
+  .clippings-paper { top: auto; right: 0; opacity: 1; }
+  .vnl-lead { grid-template-columns: minmax(0, 1fr) minmax(5.5rem, .48fr); gap: .65rem; }
+  .vnl-lead h2 { font-size: clamp(2.3rem, 8vw, 3.55rem); }
+  .vnl-art { min-height: 7.8rem; }
+  .vnl-mics { width: 82%; max-width: 8rem; right: 6%; }
+  .vnl-megaphone { width: 45%; max-width: 3.6rem; right: 58%; }
+  .certificate-lead { grid-template-columns: minmax(0, 1fr) minmax(5.5rem, .65fr); gap: .85rem; }
+  .certificate-lead h2 { font-size: clamp(1.62rem, 6vw, 2.85rem); }
+  .certificate-lead p { font-size: .9rem; }
+  .exchange-photo { width: min(100%, 10rem); }
+}
