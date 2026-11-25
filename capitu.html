@@ -1,0 +1,26 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capitu · Edição original</title><style>body{margin:0;font:16px system-ui}header{display:flex;flex-wrap:wrap;gap:1rem;padding:.7rem 1rem;align-items:center}a{color:#754858}iframe{width:100%;height:calc(100dvh - 3.5rem);border:0}</style><header><a href="./#reportagem-capitu">Voltar ao portfólio</a><span role="status">Carregando a edição original…</span><a id="download" hidden download="Layout Reportagem.pdf">Baixar PDF original</a></header><script>
+async function abrirEdicao() {
+  const status = document.querySelector('[role=status]');
+  try {
+    const partes = await Promise.all(Array.from({length: 8}, async (_, indice) => {
+      const resposta = await fetch('capitu/parte-' + indice);
+      if (!resposta.ok) throw new Error();
+      return resposta.arrayBuffer();
+    }));
+    const pdf = new Blob(partes, {type: 'application/pdf'});
+    if (pdf.size !== 31069226) throw new Error();
+    const url = URL.createObjectURL(pdf);
+    const download = document.getElementById('download');
+    download.href = url;
+    download.hidden = false;
+    status.remove();
+    const leitor = document.createElement('iframe');
+    leitor.title = 'Capitu · Edição original';
+    leitor.src = url + (location.hash === '#page=6' ? '#page=6' : '#page=1');
+    document.body.append(leitor);
+  } catch {
+    status.textContent = 'Não foi possível carregar a edição. Atualize a página para tentar novamente.';
+  }
+}
+abrirEdicao();
+</script></html>
