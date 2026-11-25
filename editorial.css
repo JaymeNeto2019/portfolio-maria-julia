@@ -514,18 +514,29 @@ h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
   gap: .65rem;
   margin-top: 1.25rem;
 }
-.maybootcamp-photos {
-  display: flex;
-  flex: 0 0 auto;
-  gap: .35rem;
-  margin-inline-start: auto;
+.foto-bastidores {
+  width: clamp(6.5rem, 15vw, 11rem);
+  padding: .28rem;
+  background: var(--white);
+  box-shadow: .25rem .35rem 0 #8e163d20;
+}
+.foto-bastidores img { width: 100%; height: auto; }
+.foto-bastidores-reportagens {
+  margin-inline: auto .5rem;
+  transform: rotate(4deg);
   scroll-margin-top: 5rem;
 }
-.maybootcamp-photos img {
-  width: min(11vw, 3.4rem);
-  height: auto;
-  border-radius: .25rem;
+.projeto-destaque {
+  display: grid;
+  grid-template-columns: minmax(0, 52rem) auto;
+  align-items: center;
+  justify-content: start;
+  gap: clamp(1rem, 5vw, 3.3rem);
+  margin-top: 1rem;
 }
-.contact-details { display: grid; gap: .45rem; font-style: normal; }
-.contact-details a, .contact-details strong { display: block; }
-.contact-details a { text-underline-offset: .24em; overflow-wrap: anywhere; }
+.foto-bastidores-projetos { transform: rotate(-5deg); margin-inline: .5rem; }
+
+@media (max-width: 420px) {
+  .projeto-destaque { grid-template-columns: minmax(0, 1fr); }
+  .foto-bastidores-projetos { justify-self: end; }
+}
