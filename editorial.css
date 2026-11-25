@@ -288,3 +288,56 @@ footer { padding: 1rem var(--gutter); text-align: center; background: var(--ink)
   #reportagem-capitu { grid-template-columns: minmax(0, 1fr); }
   .capitu-cover { justify-self: start; width: min(68%, 18rem); }
 }
+
+/* The inline SVGs clip the original artwork to its silhouette. */
+.sticker-art {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(2px 3px 1px #24151a35);
+}
+.cover-paper, .cover-camera, .clippings-paper, .vnl-mics, .academic-clapper, .design-star {
+  clip-path: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+.cover-paper { width: min(33%, 21rem); right: 2%; top: 7%; }
+.cover-camera { width: min(24%, 16rem); right: 0; }
+.cover-news { position: absolute; z-index: -1; right: 7%; bottom: 12%; width: min(30%, 19rem); transform: rotate(-13deg); }
+.prazer-sticker { position: absolute; z-index: 2; top: 10%; left: 66%; width: min(10%, 6.3rem); transform: rotate(17deg); }
+.clippings-lead { grid-template-columns: minmax(0, 1fr) minmax(0, .43fr); }
+.clippings-paper { width: min(86%, 16rem); justify-self: center; transform: rotate(9deg); z-index: 1; }
+.clippings-drawing { position: absolute; right: 3%; bottom: 8%; width: min(15%, 11rem); transform: rotate(13deg); }
+.vnl-lead { min-height: 13rem; padding-right: 24%; }
+.vnl-mics { right: 1%; bottom: 2rem; width: min(15%, 9rem); transform: rotate(12deg); }
+.vnl-megaphone { position: absolute; right: 12%; bottom: 2rem; width: min(12%, 8rem); transform: rotate(-19deg); }
+.academic-lead { padding-right: 19%; }
+.academic-clapper { width: min(19%, 13rem); right: 0; bottom: 2.4rem; transform: rotate(11deg); }
+.academic-tv { position: absolute; z-index: -1; right: 10%; top: 0; width: min(13%, 8rem); transform: rotate(-16deg); }
+.design-star { right: 25%; bottom: -4%; width: min(15%, 11rem); }
+.design-news { position: absolute; z-index: -2; right: 19%; top: 11%; width: min(15%, 10rem); transform: rotate(15deg); }
+.project-laptop { position: absolute; right: var(--gutter); top: clamp(2.5rem, 5vw, 5rem); width: clamp(5rem, 16vw, 13.5rem); transform: rotate(13deg); }
+#projetos > h2 { padding-right: clamp(4.5rem, 19vw, 15rem); }
+#projetos .grid:has(> :only-child) { max-width: min(68%, 52rem); }
+
+@media (max-width: 620px) {
+  .cover-paper { width: 32%; right: 0; }
+  .cover-camera { width: 25%; right: 0; }
+  .cover-news { width: 27%; right: 4%; }
+  .prazer-sticker { top: 0; left: 81%; width: min(14%, 3.25rem); }
+  .clippings-lead { grid-template-columns: minmax(0, 1fr); padding-right: 26%; }
+  .clippings-paper { width: 25%; right: 2%; top: auto; bottom: 12%; }
+  .clippings-drawing { width: 17%; right: 2%; bottom: auto; top: 14%; }
+  .vnl-lead { min-height: 0; padding-right: 17%; }
+  .vnl-mics { width: 18%; max-width: 4rem; right: 0; bottom: 1.2rem; }
+  .vnl-megaphone { width: 14%; max-width: 3rem; right: 16%; bottom: .9rem; }
+  .academic-lead { padding-right: 0; }
+  .academic-lead > div { padding-bottom: .7rem; }
+  .academic-clapper { width: 16%; min-width: 1.8rem; right: 0; bottom: 0; }
+  .academic-tv { display: none; }
+  .design-star { right: 26%; width: 15%; }
+  .design-news { right: 12%; top: auto; bottom: 6%; width: 18%; }
+  #projetos .grid:has(> :only-child) { max-width: none; }
+}
