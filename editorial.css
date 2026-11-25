@@ -505,3 +505,22 @@ h2 { font-size: clamp(2.35rem, 5.5vw, 5.1rem); }
   .intro-camera { right: 6%; bottom: 4%; }
   .intro-sticker { right: 4%; }
 }
+
+#designs > p + p { max-width: 68ch; }
+#maybootcamp { background: var(--paper); }
+.maybootcamp-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(.8rem, 2vw, 1.6rem);
+  max-width: 45rem;
+  margin-top: 1.25rem;
+}
+.maybootcamp-photos figure { padding: .4rem; background: white; border: 1px solid var(--line); }
+.maybootcamp-photos img { width: 100%; height: auto; }
+.contact-details { display: grid; gap: .45rem; font-style: normal; }
+.contact-details a, .contact-details strong { display: block; }
+.contact-details a { text-underline-offset: .24em; overflow-wrap: anywhere; }
+
+@media (max-width: 480px) {
+  .maybootcamp-photos { grid-template-columns: minmax(0, 1fr); }
+}
